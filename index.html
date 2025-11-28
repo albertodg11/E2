@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de ROI</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de ROI</h1>
+        <p class="subtitle">Sistema de Gestión Empresarial</p>
+        
+        <form id="roiForm">
+            <div class="form-group">
+                <label for="inversionInicial">Inversión Inicial (€)</label>
+                <input type="number" id="inversionInicial" required min="0" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <label for="costosAnuales">Costos Anuales de Mantenimiento (€)</label>
+                <input type="number" id="costosAnuales" required min="0" step="0.01">
+            </div>
+            
+            <div class="form-group">
+                <label for="ahorrosAnuales">Ahorros/Beneficios Anuales Estimados (€)</label>
+                <input type="number" id="ahorrosAnuales" required min="0" step="0.01">
+            </div>
+            
+            <button type="submit" class="btn-calcular">Mostrar ROI</button>
+        </form>
+        
+        <div id="resultados" class="resultados oculto">
+            <h2>Resultados del Análisis</h2>
+            
+            <div class="punto-inflexion">
+                <h3>Punto de Inflexión</h3>
+                <p id="puntoInflexion"></p>
+            </div>
+            
+            <div class="tabla-anual">
+                <h3>Análisis a 5 Años</h3>
+                <table id="tablaROI">
+                    <thead>
+                        <tr>
+                            <th>Año</th>
+                            <th>Inversión Acumulada (€)</th>
+                            <th>Beneficio Neto (€)</th>
+                            <th>ROI (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/js/main.js"></script>
+</body>
+</html>
